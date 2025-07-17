@@ -12,7 +12,7 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Twitter
+  Twitter,
 } from 'lucide-react'
 
 // Types for stats and features
@@ -59,7 +59,7 @@ const App: React.FC = () => {
       <ClientsSection />
       <ValuesSection />
       <ContactSection />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
@@ -68,15 +68,15 @@ export default App
 
 // Hero Section
 const HeroSection: React.FC = () => (
-  <section className="hero p-8 lg:p-16 bg-amber-800 text-white">
+  <section className="hero p-8 lg:p-16 bg-amber-900 text-white">
+    <div className="flex justify-center items-center gap-4 mb-8">
+      <img src="/favicon.ico?height=600&width=500" alt="Logo" className="w-10 h-10 rounded-full" />
+      <h1 className="text-6xl font-bold tracking-wide">KHARISMA PERKASA MAKMUR</h1>
+    </div>
     <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
       <div className="space-y-6">
-        <div className="flex items-center gap-3">
-          <TreePine className="w-10 h-10 text-white" />
-          <h1 className="text-3xl font-bold tracking-wide">KHARISMA PERKASA MAKMUR</h1>
-        </div>
-        <h2 className="text-4xl lg:text-5xl font-extrabold leading-tight">
-          Crafting Furniture tailored to<br/>
+        <h2 className="text-5xl lg:text-6xl font-extrabold leading-tight">
+          Crafting Furniture tailored to<br />
           <span className="text-red-500">Global Markets</span>
         </h2>
         <p className="text-lg max-w-2xl opacity-90">
@@ -94,7 +94,7 @@ const HeroSection: React.FC = () => (
       </div>
       <div className="flex justify-center">
         <img
-          src="/placeholder.svg?height=400&width=500"
+          src="/1.png?height=600&width=500"
           alt="Premium furniture"
           className="rounded-2xl max-w-full h-auto"
         />
@@ -146,11 +146,11 @@ const AboutSection: React.FC = () => (
           Our production facility is equipped with an in-house kiln dry system, which allows us to maintain precise wood moisture levels. This ensures the durability and stability of every piece we craft, from bedroom sets and dining furniture to custom commercial pieces, ready for export worldwide.
         </p>
       </div>
-      <div className="flex justify-center mt-8 lg:mt-0">
+      <div className="flex justify-center mt-8 lg:mt-0 rounded-full">
         <img
-          src="/placeholder.svg?height=400&width=400"
+          src="/2.png?height=800&width=1600"
           alt="Factory in Jepara, Indonesia"
-          className="rounded-2xl max-w-full h-auto"
+          className="rounded-full max-w-full h-auto"
         />
       </div>
     </div>
@@ -161,7 +161,7 @@ const AboutSection: React.FC = () => (
 const FeaturesSection: React.FC = () => {
   const features: Feature[] = [
     {
-      icon: <TreePine className="w-8 h-8 text-amber-800" />, 
+      icon: <TreePine className="w-8 h-8 text-amber-800" />,
       title: 'Sustainable Materials',
       description: 'SVLK-certified Indonesian hardwood including teak, mahogany, and mindi wood sourced from managed forests.'
     },
@@ -197,7 +197,7 @@ const FeaturesSection: React.FC = () => {
         </div>
       </div>
     </section>
-)
+  )
 }
 
 // Clients Section
@@ -206,20 +206,29 @@ const ClientsSection: React.FC = () => {
   return (
     <section className="clients section-animate py-16 bg-amber-50">
       <div className="max-w-7xl mx-auto px-8 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-8">Trusted by Retailers Worldwide</h2>
-        <div className="grid lg:grid-cols-3 gap-8">
-
+        <h2 className="text-4xl font-bold text-gray-800 mb-8">
+          Trusted by Retailers Worldwide
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+          {[3, 4, 5, 6, 7].map((i) => (
+            <img
+              key={i}
+              src={`/${i}.png?height=1800&width=1800`}
+              alt={`Retailer logo ${i}`}
+              className="rounded-2xl max-w-full h-96 object-contain mx-auto"
+            />
+          ))}
         </div>
       </div>
     </section>
-)
+  )
 }
 
 // Values Section
 const ValuesSection: React.FC = () => (
   <section className="values section-animate py-16 bg-white text-center">
     <div className="max-w-4xl mx-auto px-8">
-      <h2 className="text-4xl font-bold text-gray-800 mb-4">Everyone is Welcome</h2>
+      <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Vision</h2>
       <p className="text-lg text-gray-600 mb-6">Our aim is to build lasting partnerships across cultures and continents</p>
       <div className="w-16 h-1 bg-amber-600 mx-auto mb-6"></div>
       <p className="text-gray-600 leading-relaxed">
@@ -231,47 +240,57 @@ const ValuesSection: React.FC = () => (
 
 // Contact Section
 const ContactSection: React.FC = () => (
-  <section className="contact section-animate py-16 bg-gray-50">
-    <div className="max-w-6xl mx-auto px-8 grid lg:grid-cols-2 gap-12">
-      <div className="bg-white p-8 rounded-2xl border">
-        <h3 className="text-2xl font-semibold mb-6">Business Hours</h3>
-        <div className="space-y-4">
-          <div className="flex items-start gap-3">
+  <section className="contact section-animate py-12 bg-[#FEFDF9]">
+    <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {/* Business Hours Card */}
+      <div className="bg-white p-10 rounded-2xl border border-gray-300">
+        <h3 className="text-3xl font-semibold mb-8 text-gray-800">Business Hours</h3>
+        <div className="space-y-6">
+          <div className="flex items-start gap-4">
             <Clock className="w-6 h-6 text-amber-800 mt-1" />
             <div>
-              <p className="font-medium">Monday - Friday: 8:00 AM – 5:00 PM</p>
-              <p className="italic text-gray-600">Western Indonesia Time (WIB)</p>
+              <p className="font-medium text-gray-800">
+                Monday - Friday: 8:00 AM – 5:00 PM
+              </p>
+              <p className="italic text-gray-500">
+                Western Indonesia Time (WIB)
+              </p>
             </div>
           </div>
-          <div className="flex items-start gap-3">
+          <div className="flex items-start gap-4">
             <MapPin className="w-6 h-6 text-amber-800 mt-1" />
-            <p>
-              Our facility is located in <span className="font-semibold">Gresik, East Java, Indonesia</span>. For inquiries or to schedule a visit, please contact us. We would be delighted to provide you with a tour of our facility.
+            <p className="text-gray-700">
+              Our facility is located in{' '}
+              <span className="font-semibold text-gray-800">
+                Gresik, East Java, Indonesia
+              </span>
+              . For inquiries or to schedule a visit, please contact us. We would
+              be delighted to provide you with a tour of our facility.
             </p>
           </div>
         </div>
       </div>
-      <div className="bg-white p-8 rounded-2xl border">
-        <h3 className="text-2xl font-semibold mb-6">Contact Us</h3>
-        <div className="space-y-4">
-          <ContactItem icon={<Phone className="w-6 h-6 text-amber-800" />} label="Phone:" value="+62 291 123 4567" />
-          <ContactItem icon={<Phone className="w-6 h-6 text-green-600" />} label="WhatsApp:" value="+62 812 3456 7890" />
-          <ContactItem icon={<Mail className="w-6 h-6 text-amber-800" />} label="Sales:" value="sales@kharismapm.co.id" />
-          <ContactItem icon={<Mail className="w-6 h-6 text-amber-800" />} label="Export:" value="export@kharismapm.co.id" />
+
+      {/* Contact Us Card */}
+      <div className="bg-white p-10 rounded-2xl border border-gray-300">
+        <h3 className="text-3xl font-semibold mb-8 text-gray-800">Contact Us</h3>
+        <div className="space-y-6">
+          <div className="flex items-start gap-4">
+            <Phone className="w-6 h-6 text-amber-800 mt-1" />
+            <p className="text-gray-700">
+              Phone: +62 812-1753-0260 / +61 450 209 661
+            </p>
+          </div>
+          <div className="flex items-start gap-4">
+            <Mail className="w-6 h-6 text-amber-800 mt-1" />
+            <p className="text-gray-700">
+              Email: kharisma.pm.cv@gmail.com
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
-)
-
-const ContactItem: React.FC<{ icon: React.ReactNode; label: string; value: string }> = ({ icon, label, value }) => (
-  <div className="flex items-center gap-3">
-    {icon}
-    <div>
-      <span className="font-semibold">{label}</span>
-      <span className="ml-2 text-gray-600">{value}</span>
-    </div>
-  </div>
 )
 
 // Footer
@@ -292,10 +311,10 @@ const Footer: React.FC = () => (
       </div>
       <div className="grid grid-cols-2 gap-8">
         {[
-          { title: 'Products', links: ['Bedroom Furniture','Dining Sets','Living Room','Office Furniture','Custom Orders'] },
-          { title: 'Services', links: ['Manufacturing','Design Consultation','Global Shipping','Quality Control','Customer Support'] },
-          { title: 'Company', links: ['About Us','Careers','Sustainability','Certifications','News & Updates'] },
-          { title: 'Contact Info', links: ['+62 291 123 4567','export@kharismapm.co.id','Jepara, Central Java, Indonesia'] }
+          { title: 'Products', links: ['Bedroom Furniture', 'Dining Sets', 'Living Room', 'Office Furniture', 'Custom Orders'] },
+          { title: 'Services', links: ['Manufacturing', 'Design Consultation', 'Global Shipping', 'Quality Control', 'Customer Support'] },
+          { title: 'Company', links: ['About Us', 'Careers', 'Sustainability', 'Certifications', 'News & Updates'] },
+          { title: 'Contact Info', links: ['+62 291 123 4567', 'export@kharismapm.co.id', 'Jepara, Central Java, Indonesia'] }
         ].map((col, i) => (
           <div key={i}>
             <h4 className="font-semibold mb-4">{col.title}</h4>
