@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prevent horizontal scroll gap */
+html, body {
+  @apply overflow-x-hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade‑in animations for sections */
+@layer utilities {
+  .section-animate {
+    @apply opacity-0 translate-y-4;
+  }
+  .animate-fade-in {
+    @apply opacity-100 translate-y-0 transition-all duration-700 ease-out;
+  }
+}
