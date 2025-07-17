@@ -13,7 +13,7 @@ import {
 
 // Data definitions
 const stats = [
-  { icon: Globe, value: '40+', label: 'Continents Reached' },
+  { icon: Globe, value: '4+', label: 'Continents Reached' },
   { icon: Award, value: '14+', label: 'Years Experience' },
   { icon: Truck, value: '1,500+', label: 'Containers Delivered' },
 ];
@@ -127,7 +127,7 @@ const About: React.FC = () => (
           With over a decade of experience in indoor furniture manufacturing, we deliver high-quality products that meet international standards while maintaining competitive pricing for global markets.
         </p>
         <p className="text-gray-600 leading-relaxed text-lg">
-          Our in-house kiln dry system ensures precise wood moisture levels for durable, stable pieces—from bedroom sets to custom commercial furniture, ready for export worldwide.
+          Our in-house kiln dry system ensures precise wood moisture levels for durable, stable pieces, from bedroom sets to custom commercial furniture, ready for export worldwide.
         </p>
       </div>
       <div className="flex justify-center mt-8 lg:mt-0">
@@ -184,7 +184,7 @@ const Values: React.FC = () => (
       <p className="text-lg text-gray-600 mb-6">Building lasting partnerships across cultures and continents.</p>
       <div className="w-16 h-1 bg-amber-600 mx-auto mb-6"></div>
       <p className="text-gray-600 leading-relaxed text-lg">
-        At Kharisma Perkasa Makmur, we believe in collaboration without boundaries<br/>—whether you’re a small boutique or a large chain.
+        At Kharisma Perkasa Makmur, we believe in collaboration without boundaries, <br/>whether you’re a small boutique or a large chain.
       </p>
     </div>
   </section>
