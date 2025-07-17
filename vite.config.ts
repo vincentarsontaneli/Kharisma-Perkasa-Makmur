@@ -5,5 +5,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),     tailwindcss(),],
+  base: '/Kharisma-Perkasa-Makmur/',   
+  plugins: [react(), tailwindcss()],
+  build: {
+    outDir: 'docs',                   
+  },
 })
